@@ -1,0 +1,18 @@
+name: djpp
+dependencies:
+  - python=3.9.7
+  - pip
+  - psycopg2=2.8.6
+  - pip:
+      - django==3.2.7
+      - djangorestframework==3.12.4
+      - djangorestframework-simplejwt==4.8.0
+      - drf-yasg==1.20.0
+      - gunicorn==20.1.0
+      - flake8==3.9.2
+      - pillow==8.2.0
+      - pyjwt==2.1.0
+      - django-cors-headers==3.10.0
+      - tweepy==4.2.0
+      - apscheduler==3.8.1
+      - facebook-sdk==3.1.0

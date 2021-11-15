@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  backend:
+    image: registry.gitlab.propulsion-home.ch/full-stack/batch-17-aug-2021/final-projects/djpp:latest
+    ports:
+      - 8000:8000
+    env_file:
+      - ./env/dev.env
+    volumes:
+      - ./backend:/backend
+    command: "sh /scripts/dev.sh"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    env_file:
+      - ./env/dev.env
+    ports:
+      - 5433:5432
+    volumes:
+      - postgres_docker_volume:/var/lib/postgresql/data/
+
+volumes:
+  postgres_docker_volume:
